@@ -134,17 +134,17 @@ const io = new Server(Port, {
   },
 });
 
-let User = [];
+let OnlineUser = [];
 
 const adduser = (userdata, socketId) => {
-  !User.some((user) => user.sub == userdata.sub) &&
-    User.push({ ...userdata, socketId });
+  !OnlineUser.some((user) => user.sub == userdata.sub) &&
+  OnlineUser.push({ ...userdata, socketId });
 };
 
 // getUser
 const getUser = (userId) => {
   console.log("working", userId);
-  return User.find((user) => user.sub === userId);
+  return OnlineUser.find((user) => user.sub === userId);
 };
 
 io.on("connection", (socket) => {
