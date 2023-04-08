@@ -151,7 +151,7 @@ io.on("connection", (socket) => {
   console.log("User Connected");
   socket.on("addUsers", (userdata) => {
     adduser(userdata, socket.id);
-    io.emit("getUsers", User);
+    io.emit("getUsers", OnlineUser);
   });
 
   socket.on("sendMessage", (data) => {
