@@ -14,7 +14,7 @@ app.use(Cors());
 app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const Port = process.env.Port || 8888;
+const Port = process.env.PORT || 8888;
 
 Connection();
 
